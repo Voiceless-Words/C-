@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pragolan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 12:47:17 by pragolan          #+#    #+#             */
-/*   Updated: 2019/06/09 18:28:28 by pragolan         ###   ########.fr       */
+/*   Created: 2019/06/09 17:31:33 by pragolan          #+#    #+#             */
+/*   Updated: 2019/06/09 18:20:03 by pragolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-#define SORCERER_HPP
+#ifndef PEON_H
+#define PEON_H
 
-#include <iostream>
-#include <string>
 #include "Victim.hpp"
-#include "Peon.hpp"
 
-class Sorcerer {
+class Peon : public Victim{
 
 	public:
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer& copyConstructor);
-		~Sorcerer(void);
+		Peon(std::string name);
+		Peon(const Peon& copy);
+		Peon(void);
+		~Peon(void);
 
-		Sorcerer& operator=(const Sorcerer& some);
-		std::string getName(void) const;
-		std::string getTitle(void) const;
-		void polymorph(Victim const& vic) const;
+		Peon& operator=(const Peon& p);
+		void getPolymorphed() const;
+	
 	private:
 		std::string _name;
-		std::string _title;
-
 };
 
-std::ostream & operator<<(std::ostream & o, Sorcerer const & i);
 #endif

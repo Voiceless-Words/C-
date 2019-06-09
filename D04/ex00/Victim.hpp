@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pragolan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 12:47:17 by pragolan          #+#    #+#             */
-/*   Updated: 2019/06/09 18:28:28 by pragolan         ###   ########.fr       */
+/*   Created: 2019/06/09 16:19:53 by pragolan          #+#    #+#             */
+/*   Updated: 2019/06/09 18:26:15 by pragolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-#define SORCERER_HPP
-
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 #include <iostream>
+
 #include <string>
 #include "Victim.hpp"
-#include "Peon.hpp"
 
-class Sorcerer {
+class Victim {
 
 	public:
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer& copyConstructor);
-		~Sorcerer(void);
+		Victim(std::string name);
+		Victim(void);
+		Victim(const Victim& copy);
+		~Victim(void);
 
-		Sorcerer& operator=(const Sorcerer& some);
-		std::string getName(void) const;
-		std::string getTitle(void) const;
-		void polymorph(Victim const& vic) const;
+		Victim& operator=(const Victim& vic);
+		std::string getVictimName(void) const;
+		virtual void getPolymorphed() const;
 	private:
 		std::string _name;
-		std::string _title;
-
 };
 
-std::ostream & operator<<(std::ostream & o, Sorcerer const & i);
+std::ostream& operator<<(std::ostream& o, Victim const& vic);
+
 #endif
