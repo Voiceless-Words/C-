@@ -15,7 +15,7 @@
 Peon::Peon(std::string name)
 {
 	_name = name;
-	std::cout << "" << std::endl;
+	std::cout << "Zog zog" << std::endl;
 
 	return ;
 }
@@ -30,6 +30,8 @@ Peon::Peon(const Peon& copy)
 
 Peon::Peon(void)
 {
+	_name = "Piet";
+	std::cout << "Zog zog" << std::endl;
 	return ;
 }
 
@@ -50,7 +52,7 @@ void Peon::getPolymorphed() const
 Peon& Peon::operator=(const Peon& rhs)
 {
 	if (this != &rhs)
-		_name = rhs.getVictimName();
+		_name = rhs._name;
 
 	return (*this);
 }

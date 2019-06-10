@@ -22,6 +22,9 @@ return ;
 
 Victim::Victim(void)
 {
+	this->_name = "Joe";
+	std::cout << "Some random victim called " << this->_name << " just popped !" << std::endl;
+ 
 	return ;
 }
 

@@ -16,11 +16,11 @@
 #include <iostream>
 #include <string>
 #include "Victim.hpp"
-#include "Peon.hpp"
 
 class Sorcerer {
 
 	public:
+		Sorcerer(void);
 		Sorcerer(std::string name, std::string title);
 		Sorcerer(const Sorcerer& copyConstructor);
 		~Sorcerer(void);

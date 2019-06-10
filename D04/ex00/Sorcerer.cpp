@@ -12,6 +12,16 @@
 
 #include "Sorcerer.hpp"
 
+Sorcerer::Sorcerer(void)
+{
+	_name = "Thabiso";
+	_title = "What are you doing?";
+
+	std::cout << _name << ", " << _title << ", is born !" << std::endl;
+
+	return ;
+}
+
 Sorcerer::Sorcerer(std::string name, std::string title)
 {
 	std::cout << name << ", " << title << ", is born !" << std::endl;
@@ -61,7 +71,5 @@ std::ostream& operator<<(std::ostream& output, Sorcerer const& intro)
 
 void Sorcerer::polymorph(Victim const& vic) const
 {
-	std::cout << "polymorphed was called" << std::endl;
-
-	return ;
+	return (vic.getPolymorphed());
 }
