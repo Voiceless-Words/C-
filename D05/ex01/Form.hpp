@@ -19,25 +19,27 @@ class Form {
 
 	public:
 		Form(void);
-		Form(std::string formName, bool signedIn, int const exGrade, int const reGrade);
+		Form(std::string formName, int const exGrade, int const reGrade);
 		Form(const Form& copy);
 		~Form(void);
 
-		Form& operator=(const Form& form);
-		int getExecuteGrade(void) const;
-		int getRequiredGrade(void) const;
-		std::string getformName(void) const;
+		const Form& operator=(const Form& form);
+		int const getExecuteGrade(void) const;
+		int const getRequiredGrade(void) const;
+		std::string const getformName(void) const;
+		void beSigned(Bureaucrat& bur);
+		bool getSignedIn(void) const;
 
 		class GradeTooHighException : public std::exception {
 
 			public:
-				virtual const char* gradeHigh() const throw();
+				virtual const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
 
 			public:
-				virtual const char *gradeLow() const throw();
+				virtual const char *what() const throw();
 		};
 
 	private:
@@ -48,4 +50,5 @@ class Form {
 
 };
 
+std::ostream& operator<<(std::ostream& output, Form& rhs);
 #endif

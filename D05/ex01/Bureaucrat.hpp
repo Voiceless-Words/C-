@@ -5,6 +5,8 @@
 # include <string>
 # include <stdexcept>
 
+class Form;
+
 class Bureaucrat {
 
 	public:
@@ -18,6 +20,7 @@ class Bureaucrat {
 		int getGrade(void) const;
 		void incrementGrade(void);
 		void decrementGrade(void);
+		void signForm(Form& form);
 
 		class GradeTooHighException : public std::exception {
 		
@@ -28,7 +31,7 @@ class Bureaucrat {
 
 				GradeTooHighException& operator=(const GradeTooHighException& rhs);*/
 
-				virtual const char* gradeHigh() const throw();
+				virtual const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
@@ -40,7 +43,7 @@ class Bureaucrat {
 
 				GradeTooLowException& operator=(const GradeTooLowException& rhs);*/
 
-				virtual const char* gradeLow() const throw();
+				virtual const char* what() const throw();
 		};
 
 	

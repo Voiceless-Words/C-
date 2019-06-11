@@ -28,7 +28,7 @@ class Bureaucrat {
 
 				GradeTooHighException& operator=(const GradeTooHighException& rhs);*/
 
-				virtual const char* gradeHigh() const throw();
+				virtual const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
@@ -40,7 +40,7 @@ class Bureaucrat {
 
 				GradeTooLowException& operator=(const GradeTooLowException& rhs);*/
 
-				virtual const char* gradeLow() const throw();
+				virtual const char* what() const throw();
 		};
 
 	

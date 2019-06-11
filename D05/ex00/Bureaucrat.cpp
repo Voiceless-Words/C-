@@ -3,37 +3,22 @@
 Bureaucrat::Bureaucrat(void)
 {
 	std::cout << "Try giving us a name and grade" << std::endl;
-
 	return ;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
-	try {
 		if (grade < 1)
 			throw Bureaucrat::GradeTooHighException();
 		else if (grade > 150)
 			throw Bureaucrat::GradeTooLowException();
 		else
 			_grade = grade;
-	}
-	catch (Bureaucrat::GradeTooHighException& e)
-	{
-		std::cout << e.gradeHigh();
-	}
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << e.gradeLow();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "This is the std::exception." << std::endl;
-	}
 	
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name)
 {
 	*this = copy;
 
@@ -62,46 +47,26 @@ std::string Bureaucrat::getName(void) const
 
 void Bureaucrat::incrementGrade(void)
 {
-	try{
-		if(_grade - 1 >= 1)
-			_grade--;
-		else
-			throw Bureaucrat::GradeTooHighException();
-	}
-	catch (Bureaucrat::GradeTooHighException& e)
-	{
-		std::cout << e.gradeHigh();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "This is the std::exception." << std::endl;
-	}
+	if(_grade - 1 >= 1)
+		_grade--;
+	else
+		throw Bureaucrat::GradeTooHighException();
 }
 
 void Bureaucrat::decrementGrade(void)
 {
-	try{
-		if(_grade + 1 <= 150)
-			_grade++;
-		else
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << e.gradeLow();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "This is the std::exception." << std::endl;
-	}
+	if(_grade + 1 <= 150)
+		_grade++;
+	else
+		throw Bureaucrat::GradeTooLowException();
 }
 
-const char* Bureaucrat::GradeTooHighException::gradeHigh() const throw()
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return "Grade is too high wena sahni !";
 }
 
-const char* Bureaucrat::GradeTooLowException::gradeLow() const throw()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Grade is too Low wena sahni !";
 }
