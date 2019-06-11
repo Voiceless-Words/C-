@@ -1,12 +1,21 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pragolan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/10 15:27:05 by pragolan          #+#    #+#             */
+/*   Updated: 2019/06/10 15:31:34 by pragolan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Character.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
 #include "RadScorpion.hpp"
 
-int
-main(void)
+int main(void)
 {
     Character *zaz = new Character("zaz");
     std::cout << *zaz;

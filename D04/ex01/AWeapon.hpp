@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pragolan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/10 15:21:23 by pragolan          #+#    #+#             */
+/*   Updated: 2019/06/10 15:47:36 by pragolan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AWEAPON_HPP
 # define AWEAPON_HPP
 
@@ -27,8 +39,4 @@ class AWeapon
         std::string       _name;
 };
 
-std::ostream& operator<<(std::ostream& output, AWeapon const& rhs)
-{
-	return (output);
-}
 #endif

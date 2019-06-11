@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pragolan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/10 15:22:49 by pragolan          #+#    #+#             */
+/*   Updated: 2019/06/10 15:46:56 by pragolan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
@@ -32,6 +44,5 @@ class Character
         std::string         _name;
 };
 
-std::ostream                &operator<<(std::ostream &o, const Character &rhs);
-
+std::ostream& operator<<(std::ostream &out, const Character &rhs);
 #endif
